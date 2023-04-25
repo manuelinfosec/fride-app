@@ -36,7 +36,7 @@ async function getSignupData() {
 
         body: JSON.stringify(objectOne)
     });
-    const data = response.json();
+    const data = await response.json();
     console.log(data);
 
     // fetch("http://localhost:8080/register", {
