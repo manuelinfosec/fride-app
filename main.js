@@ -15,7 +15,10 @@ const password = document.getElementById("password");
 
 signup.addEventListener("submit", (e) => {
     e.preventDefault();
+    getSignupData();
+});
 
+async function getSignupData() {
     const objectOne = {
         firstName: firstName.value,
         lastName: lastName.value,
@@ -24,17 +27,29 @@ signup.addEventListener("submit", (e) => {
         password: password.value
     }
 
-    fetch("http://localhost:8080/register", {
-            method: "post",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
+    const response = await fetch("http://localhost:8080/register", {
+        method: "post",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
 
-            body: JSON.stringify(objectOne)
-        })
-        .then((response) => {
-            const data = response.json();
-            console.log(data);
-        });
-});
+        body: JSON.stringify(objectOne)
+    });
+    const data = response.json();
+    console.log(data);
+
+    // fetch("http://localhost:8080/register", {
+    //         method: "post",
+    //         headers: {
+    //             'Accept': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+
+    //         body: JSON.stringify(objectOne)
+    //     })
+    //     .then((response) => {
+    //         const data = response.json();
+    //         console.log(data);
+    //     });
+}
