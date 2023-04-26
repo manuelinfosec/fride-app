@@ -8,7 +8,8 @@
     <title>Fride</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/36e8bee060.js" crossorigin="anonymous"></script>
-    <script src="main.js" defer></script>
+    <script src="main.js" defer type="module"></script>
+    <script src="login.js" defer type="module"></script>
 </head>
 
 <body>
@@ -26,10 +27,10 @@
         <button class="menu"><i class="fa-solid fa-bars"></i></button>
     </header>
     <h1 class=" head main">Log In</h1>
-    <form action="" class="signup">
+    <form action="" class="signup" id="login">
         <img src="assets/logo.png" alt="" class="logo">
-        <input type="email" placeholder="Email Address" name="email">
-        <input type="password" placeholder="Password" name="password">
+        <input type="email" placeholder="Email Address" name="email" id="loginEmail">
+        <input type="password" placeholder="Password" name="password" id="loginPassword">
         <a href="" class="forgot">Forgot password?</a>
         <button type="submit" class="rect space">Log In</button>
         <p>Are you new here? <a href="signup.html">Sign up</a></p>
